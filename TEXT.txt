@@ -1,0 +1,7 @@
+Each player has three pieces. The winner is the first player to align their three pieces on a line drawn on the board. There are 3 horizontal lines, 3 vertical lines and 2 diagonal lines.
+
+The board is empty to begin the game, and players take turns placing their pieces on empty intersections. Once all pieces are placed (assuming there is no winner by then), play proceeds with each player moving one of their pieces per turn. A piece may move to any vacant point on the board, not just an adjacent one.[1]
+
+According to A History of Chess, there is an alternative version in which pieces may not move to any vacant point, but only to any adjacent linked empty position, i.e. from a corner to the middle of an adjacent edge, from the middle of an edge to the center or an adjacent corner, or from the center to the middle of an edge.[2]
+
+H. J. R. Murray calls the first version "nine holes" and the second version "three men's morris" or "the smaller merels"
