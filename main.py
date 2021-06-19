@@ -32,9 +32,9 @@ yellow_position_1 = 0
 yellow_position_2 = 0
 yellow_position_3 = 0
 
-message_1 = "BLUE START"
-res_message = "RESTART"
-quit_message = "QUIT"
+message_1 = "Blue start"
+res_message = "Restart"
+quit_message = "Quit"
 
 start_pos = (0, 0)
 end_pos = (0, 0)
@@ -52,7 +52,7 @@ def draw_status():
     display = pg.Surface((200, 50))
     show = display.get_rect(center=(275, 30))
     pg.draw.rect(screen, (255, 120, 185), show)
-    font = pg.font.Font(None, 30)
+    font = pg.font.SysFont("Segoe UI", 25, 3)
     text = font.render(message_1, True, (255, 255, 255))
     text_rect = text.get_rect(center=(275, 30))
     screen.blit(text, text_rect)
@@ -64,7 +64,7 @@ def draw_button():
     display = pg.Surface((110, 50))
     show = display.get_rect(center=(550, 235))
     pg.draw.rect(screen, "white", show, border_radius=15)
-    font = pg.font.Font(None, 30)
+    font = pg.font.SysFont("Segoe UI", 25, 3)
     resert = font.render(res_message, True, (1, 14, 122))
     resert_rect = resert.get_rect(center=(550, 235))
     screen.blit(resert, resert_rect)
@@ -72,7 +72,7 @@ def draw_button():
     display = pg.Surface((110, 50))
     show = display.get_rect(center=(550, 310))
     pg.draw.rect(screen, "white", show, border_radius=15)
-    font = pg.font.Font(None, 30)
+    font = pg.font.SysFont("Segoe UI", 25, 3)
     quit = font.render(quit_message, True, (1, 14, 122))
     quit_rect = quit.get_rect(center=(550, 310))
     screen.blit(quit, quit_rect)
@@ -129,55 +129,55 @@ def blue_mouse_moves():
                     placer.blue_1.centerx = 100
                     placer.blue_1.centery = 100
                     blue_position_1 = 1
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(70, 130) and placer.blue_1.y in range(430, 480):
                     placer.blue_1.centerx = 100
                     placer.blue_1.centery = 450
                     blue_position_1 = 7
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(420, 480) and placer.blue_1.y in range(70, 130):
                     placer.blue_1.centerx = 450
                     placer.blue_1.centery = 100
                     blue_position_1 = 3
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(420, 480) and placer.blue_1.y in range(420, 480):
                     placer.blue_1.centerx = 450
                     placer.blue_1.centery = 450
                     blue_position_1 = 9
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(70, 130) and placer.blue_1.y in range(245, 315):
                     placer.blue_1.centerx = 100
                     placer.blue_1.centery = 275
                     blue_position_1 = 4
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(245, 315) and placer.blue_1.y in range(70, 130):
                     placer.blue_1.centerx = 275
                     placer.blue_1.centery = 100
                     blue_position_1 = 2
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(245, 315) and placer.blue_1.y in range(420, 480):
                     placer.blue_1.centerx = 275
                     placer.blue_1.centery = 450
                     blue_position_1 = 8
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(420, 480) and placer.blue_1.y in range(245, 315):
                     placer.blue_1.centerx = 450
                     placer.blue_1.centery = 275
                     blue_position_1 = 6
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(245, 315) and placer.blue_1.y in range(245, 315):
                     placer.blue_1.centerx = 275
                     placer.blue_1.centery = 275
                     blue_position_1 = 5
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
         elif held_2 and placer.blue_2.collidepoint(event.pos):
             if dragging:
@@ -189,55 +189,55 @@ def blue_mouse_moves():
                     placer.blue_2.centerx = 100
                     placer.blue_2.centery = 100
                     blue_position_2 = 1
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(70, 130) and placer.blue_2.y in range(430, 480):
                     placer.blue_2.centerx = 100
                     placer.blue_2.centery = 450
                     blue_position_2 = 7
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(420, 480) and placer.blue_2.y in range(70, 130):
                     placer.blue_2.centerx = 450
                     placer.blue_2.centery = 100
                     blue_position_2 = 3
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(420, 480) and placer.blue_2.y in range(420, 480):
                     placer.blue_2.centerx = 450
                     placer.blue_2.centery = 450
                     blue_position_2 = 9
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(70, 130) and placer.blue_2.y in range(245, 315):
                     placer.blue_2.centerx = 100
                     placer.blue_2.centery = 275
                     blue_position_2 = 4
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(245, 315) and placer.blue_2.y in range(70, 130):
                     placer.blue_2.centerx = 275
                     placer.blue_2.centery = 100
                     blue_position_2 = 2
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(245, 315) and placer.blue_2.y in range(420, 480):
                     placer.blue_2.centerx = 275
                     placer.blue_2.centery = 450
                     blue_position_2 = 8
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(420, 480) and placer.blue_2.y in range(245, 315):
                     placer.blue_2.centerx = 450
                     placer.blue_2.centery = 275
                     blue_position_2 = 6
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(245, 315) and placer.blue_2.y in range(245, 315):
                     placer.blue_2.centerx = 275
                     placer.blue_2.centery = 275
                     blue_position_2 = 5
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
         elif held_3 and placer.blue_3.collidepoint(event.pos):
             if dragging:
@@ -249,55 +249,55 @@ def blue_mouse_moves():
                     placer.blue_3.centerx = 100
                     placer.blue_3.centery = 100
                     blue_position_3 = 1
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(70, 130) and placer.blue_3.y in range(430, 480):
                     placer.blue_3.centerx = 100
                     placer.blue_3.centery = 450
                     blue_position_3 = 7
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(420, 480) and placer.blue_3.y in range(70, 130):
                     placer.blue_3.centerx = 450
                     placer.blue_3.centery = 100
                     blue_position_3 = 3
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(420, 480) and placer.blue_3.y in range(420, 480):
                     placer.blue_3.centerx = 450
                     placer.blue_3.centery = 450
                     blue_position_3 = 9
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(70, 130) and placer.blue_3.y in range(245, 315):
                     placer.blue_3.centerx = 100
                     placer.blue_3.centery = 275
                     blue_position_3 = 4
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(245, 315) and placer.blue_3.y in range(70, 130):
                     placer.blue_3.centerx = 275
                     placer.blue_3.centery = 100
                     blue_position_3 = 2
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(245, 315) and placer.blue_3.y in range(420, 480):
                     placer.blue_3.centerx = 275
                     placer.blue_3.centery = 450
                     blue_position_3 = 8
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(420, 480) and placer.blue_3.y in range(245, 315):
                     placer.blue_3.centerx = 450
                     placer.blue_3.centery = 275
                     blue_position_3 = 6
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(245, 315) and placer.blue_3.y in range(245, 315):
                     placer.blue_3.centerx = 275
                     placer.blue_3.centery = 275
                     blue_position_3 = 5
-                    message_1 = "YELLOW'S TURN"
+                    message_1 = "Yellow's turn"
 
 
 def yellow_mouse_moves():
@@ -340,55 +340,55 @@ def yellow_mouse_moves():
                     placer.yellow_1.centerx = 100
                     placer.yellow_1.centery = 100
                     yellow_position_1 = 1
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(70, 130) and placer.yellow_1.y in range(430, 480):
                     placer.yellow_1.centerx = 100
                     placer.yellow_1.centery = 450
                     yellow_position_1 = 7
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(420, 480) and placer.yellow_1.y in range(70, 130):
                     placer.yellow_1.centerx = 450
                     placer.yellow_1.centery = 100
                     yellow_position_1 = 3
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(420, 480) and placer.yellow_1.y in range(420, 480):
                     placer.yellow_1.centerx = 450
                     placer.yellow_1.centery = 450
                     yellow_position_1 = 9
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(70, 130) and placer.yellow_1.y in range(245, 315):
                     placer.yellow_1.centerx = 100
                     placer.yellow_1.centery = 275
                     yellow_position_1 = 4
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(245, 315) and placer.yellow_1.y in range(70, 130):
                     placer.yellow_1.centerx = 275
                     placer.yellow_1.centery = 100
                     yellow_position_1 = 2
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(245, 315) and placer.yellow_1.y in range(420, 480):
                     placer.yellow_1.centerx = 275
                     placer.yellow_1.centery = 450
                     yellow_position_1 = 8
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(420, 480) and placer.yellow_1.y in range(245, 315):
                     placer.yellow_1.centerx = 450
                     placer.yellow_1.centery = 275
                     yellow_position_1 = 6
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(245, 315) and placer.yellow_1.y in range(245, 315):
                     placer.yellow_1.centerx = 275
                     placer.yellow_1.centery = 275
                     yellow_position_1 = 5
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
         elif held_2 and placer.yellow_2.collidepoint(event.pos):
             if dragging:
@@ -400,55 +400,55 @@ def yellow_mouse_moves():
                     placer.yellow_2.centerx = 100
                     placer.yellow_2.centery = 100
                     yellow_position_2 = 1
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(70, 130) and placer.yellow_2.y in range(430, 480):
                     placer.yellow_2.centerx = 100
                     placer.yellow_2.centery = 450
                     yellow_position_2 = 7
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(420, 480) and placer.yellow_2.y in range(70, 130):
                     placer.yellow_2.centerx = 450
                     placer.yellow_2.centery = 100
                     yellow_position_2 = 3
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(420, 480) and placer.yellow_2.y in range(420, 480):
                     placer.yellow_2.centerx = 450
                     placer.yellow_2.centery = 450
                     yellow_position_2 = 9
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(70, 130) and placer.yellow_2.y in range(245, 315):
                     placer.yellow_2.centerx = 100
                     placer.yellow_2.centery = 275
                     yellow_position_2 = 4
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(245, 315) and placer.yellow_2.y in range(70, 130):
                     placer.yellow_2.centerx = 275
                     placer.yellow_2.centery = 100
                     yellow_position_2 = 2
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(245, 315) and placer.yellow_2.y in range(420, 480):
                     placer.yellow_2.centerx = 275
                     placer.yellow_2.centery = 450
                     yellow_position_2 = 8
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(420, 480) and placer.yellow_2.y in range(245, 315):
                     placer.yellow_2.centerx = 450
                     placer.yellow_2.centery = 275
                     yellow_position_2 = 6
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(245, 315) and placer.yellow_2.y in range(245, 315):
                     placer.yellow_2.centerx = 275
                     placer.yellow_2.centery = 275
                     yellow_position_2 = 5
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
         elif held_3 and placer.yellow_3.collidepoint(event.pos):
             if dragging:
@@ -460,55 +460,55 @@ def yellow_mouse_moves():
                     placer.yellow_3.centerx = 100
                     placer.yellow_3.centery = 100
                     yellow_position_3 = 1
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(70, 130) and placer.yellow_3.y in range(430, 480):
                     placer.yellow_3.centerx = 100
                     placer.yellow_3.centery = 450
                     yellow_position_3 = 7
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(420, 480) and placer.yellow_3.y in range(70, 130):
                     placer.yellow_3.centerx = 450
                     placer.yellow_3.centery = 100
                     yellow_position_3 = 3
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(420, 480) and placer.yellow_3.y in range(420, 480):
                     placer.yellow_3.centerx = 450
                     placer.yellow_3.centery = 450
                     yellow_position_3 = 9
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(70, 130) and placer.yellow_3.y in range(245, 315):
                     placer.yellow_3.centerx = 100
                     placer.yellow_3.centery = 275
                     yellow_position_3 = 4
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(245, 315) and placer.yellow_3.y in range(70, 130):
                     placer.yellow_3.centerx = 275
                     placer.yellow_3.centery = 100
                     yellow_position_3 = 2
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(245, 315) and placer.yellow_3.y in range(420, 480):
                     placer.yellow_3.centerx = 275
                     placer.yellow_3.centery = 450
                     yellow_position_3 = 8
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(420, 480) and placer.yellow_3.y in range(245, 315):
                     placer.yellow_3.centerx = 450
                     placer.yellow_3.centery = 275
                     yellow_position_3 = 6
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(245, 315) and placer.yellow_3.y in range(245, 315):
                     placer.yellow_3.centerx = 275
                     placer.yellow_3.centery = 275
                     yellow_position_3 = 5
-                    message_1 = "BLUE'S TURN"
+                    message_1 = "Blue's turn"
 
 
 def win_blue():
