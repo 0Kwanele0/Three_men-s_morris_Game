@@ -52,7 +52,7 @@ def draw_status():
     display = pg.Surface((200, 50))
     show = display.get_rect(center=(275, 30))
     pg.draw.rect(screen, (255, 120, 185), show)
-    font = pg.font.SysFont("Segoe UI", 25, 3)
+    font = pg.font.SysFont("gilroy", 35, 1)
     text = font.render(message_1, True, (255, 255, 255))
     text_rect = text.get_rect(center=(275, 30))
     screen.blit(text, text_rect)
@@ -64,7 +64,7 @@ def draw_button():
     display = pg.Surface((110, 50))
     show = display.get_rect(center=(550, 235))
     pg.draw.rect(screen, "white", show, border_radius=15)
-    font = pg.font.SysFont("Segoe UI", 25, 3)
+    font = pg.font.SysFont("gotham", 30, 4)
     resert = font.render(res_message, True, (1, 14, 122))
     resert_rect = resert.get_rect(center=(550, 235))
     screen.blit(resert, resert_rect)
@@ -72,7 +72,7 @@ def draw_button():
     display = pg.Surface((110, 50))
     show = display.get_rect(center=(550, 310))
     pg.draw.rect(screen, "white", show, border_radius=15)
-    font = pg.font.SysFont("Segoe UI", 25, 3)
+    font = pg.font.SysFont("gotham", 30, 4)
     quit = font.render(quit_message, True, (1, 14, 122))
     quit_rect = quit.get_rect(center=(550, 310))
     screen.blit(quit, quit_rect)
@@ -519,31 +519,31 @@ def win_blue():
         end_pos = (450, 100)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 2 and blue_position_2 == 1 and blue_position_3 == 3:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 1 and blue_position_2 == 3 and blue_position_3 == 2:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 3 and blue_position_2 == 2 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 2 and blue_position_2 == 3 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
     # row 2
     if blue_position_1 == 4 and blue_position_2 == 5 and blue_position_3 == 6:
@@ -551,31 +551,31 @@ def win_blue():
         end_pos = (450, 275)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 4 and blue_position_3 == 6:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 4 and blue_position_2 == 6 and blue_position_3 == 5:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 6 and blue_position_2 == 5 and blue_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 6 and blue_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
     # row 3
     if blue_position_1 == 7 and blue_position_2 == 8 and blue_position_3 == 9:
@@ -584,31 +584,31 @@ def win_blue():
         winner = True
         if winner:
             draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 8 and blue_position_2 == 7 and blue_position_3 == 9:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 7 and blue_position_2 == 9 and blue_position_3 == 8:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 9 and blue_position_2 == 8 and blue_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 8 and blue_position_2 == 9 and blue_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
     # column 1
     if blue_position_1 == 1 and blue_position_2 == 4 and blue_position_3 == 7:
@@ -616,31 +616,31 @@ def win_blue():
         end_pos = (100, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 4 and blue_position_2 == 1 and blue_position_3 == 7:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 1 and blue_position_2 == 7 and blue_position_3 == 4:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 7 and blue_position_2 == 4 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 4 and blue_position_2 == 7 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
     # column 2
     if blue_position_1 == 2 and blue_position_2 == 5 and blue_position_3 == 8:
@@ -648,31 +648,31 @@ def win_blue():
         end_pos = (275, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 2 and blue_position_3 == 8:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 2 and blue_position_2 == 8 and blue_position_3 == 5:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 8 and blue_position_2 == 5 and blue_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 8 and blue_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
     # column 3
     if blue_position_1 == 3 and blue_position_2 == 6 and blue_position_3 == 9:
@@ -680,31 +680,31 @@ def win_blue():
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 6 and blue_position_2 == 3 and blue_position_3 == 9:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 3 and blue_position_2 == 9 and blue_position_3 == 6:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 9 and blue_position_2 == 6 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 6 and blue_position_2 == 9 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
     # cross 1
     if blue_position_1 == 1 and blue_position_2 == 5 and blue_position_3 == 9:
@@ -712,31 +712,31 @@ def win_blue():
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 1 and blue_position_3 == 9:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 1 and blue_position_2 == 9 and blue_position_3 == 5:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 9 and blue_position_2 == 5 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 9 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
     # cross 2
     if blue_position_1 == 3 and blue_position_2 == 5 and blue_position_3 == 7:
@@ -744,31 +744,31 @@ def win_blue():
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 3 and blue_position_3 == 7:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 3 and blue_position_2 == 7 and blue_position_3 == 5:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 7 and blue_position_2 == 5 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
     if blue_position_1 == 5 and blue_position_2 == 7 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "BLUE WON!!!"
+        message_1 = "Blue won!!!"
 
 
 def win_yellow():
@@ -779,31 +779,31 @@ def win_yellow():
         end_pos = (450, 100)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 2 and yellow_position_2 == 1 and yellow_position_3 == 3:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 1 and yellow_position_2 == 3 and yellow_position_3 == 2:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 3 and yellow_position_2 == 2 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 2 and yellow_position_2 == 3 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
     # row 2
     if yellow_position_1 == 4 and yellow_position_2 == 5 and yellow_position_3 == 6:
@@ -811,31 +811,31 @@ def win_yellow():
         end_pos = (450, 275)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 4 and yellow_position_3 == 6:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 4 and yellow_position_2 == 6 and yellow_position_3 == 5:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 6 and yellow_position_2 == 5 and yellow_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 6 and yellow_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
     # row 3
     if yellow_position_1 == 7 and yellow_position_2 == 8 and yellow_position_3 == 9:
@@ -843,31 +843,31 @@ def win_yellow():
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 8 and yellow_position_2 == 7 and yellow_position_3 == 9:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 7 and yellow_position_2 == 9 and yellow_position_3 == 8:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 9 and yellow_position_2 == 8 and yellow_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 8 and yellow_position_2 == 9 and yellow_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
     # column 1
     if yellow_position_1 == 1 and yellow_position_2 == 4 and yellow_position_3 == 7:
@@ -875,31 +875,31 @@ def win_yellow():
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 4 and yellow_position_2 == 1 and yellow_position_3 == 7:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 1 and yellow_position_2 == 7 and yellow_position_3 == 4:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 7 and yellow_position_2 == 4 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 4 and yellow_position_2 == 7 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
     # column 2
     if yellow_position_1 == 2 and yellow_position_2 == 5 and yellow_position_3 == 8:
@@ -907,31 +907,31 @@ def win_yellow():
         end_pos = (275, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 2 and yellow_position_3 == 8:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 2 and yellow_position_2 == 7 and yellow_position_3 == 4:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 8 and yellow_position_2 == 5 and yellow_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 8 and yellow_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
     # column 3
     if yellow_position_1 == 3 and yellow_position_2 == 6 and yellow_position_3 == 9:
@@ -939,31 +939,31 @@ def win_yellow():
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 6 and yellow_position_2 == 3 and yellow_position_3 == 9:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 3 and yellow_position_2 == 9 and yellow_position_3 == 6:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 9 and yellow_position_2 == 6 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 6 and yellow_position_2 == 9 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
     # cross 1
     if yellow_position_1 == 1 and yellow_position_2 == 5 and yellow_position_3 == 9:
@@ -971,31 +971,31 @@ def win_yellow():
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 1 and yellow_position_3 == 9:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 1 and yellow_position_2 == 9 and yellow_position_3 == 5:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 9 and yellow_position_2 == 5 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 9 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
     # cross 2
     if yellow_position_1 == 3 and yellow_position_2 == 5 and yellow_position_3 == 7:
@@ -1003,31 +1003,31 @@ def win_yellow():
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 3 and yellow_position_3 == 7:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 3 and yellow_position_2 == 7 and yellow_position_3 == 5:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 7 and yellow_position_2 == 5 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
     if yellow_position_1 == 5 and yellow_position_2 == 7 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
-        message_1 = "YELLOW WON!!!"
+        message_1 = "Yellow won!!!"
 
 
 def re_start():
@@ -1043,7 +1043,7 @@ def re_start():
     yellow_position_2 = 0
     yellow_position_3 = 0
 
-    message_1 = "BLUE START"
+    message_1 = "Blue start!"
     placer.blue_rect_2 = pg.Surface((50, 50))
     placer.blue_2 = placer.blue_rect_2.get_rect(center=placer._pos_initial_1)
 
