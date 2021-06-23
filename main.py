@@ -6,7 +6,8 @@ from board import draw_board
 from placers import Placers
 
 pg.init()
-
+placer_sound = pg.mixer.Sound("sounds/placer.wav")
+win_sound = pg.mixer.Sound("sounds/win sound.wav")
 fps = 60
 clock = pg.time.Clock()
 screen = pg.display.set_mode((650, 590))
@@ -129,54 +130,63 @@ def blue_mouse_moves():
                     placer.blue_1.centerx = 100
                     placer.blue_1.centery = 100
                     blue_position_1 = 1
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(70, 130) and placer.blue_1.y in range(430, 480):
                     placer.blue_1.centerx = 100
                     placer.blue_1.centery = 450
                     blue_position_1 = 7
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(420, 480) and placer.blue_1.y in range(70, 130):
                     placer.blue_1.centerx = 450
                     placer.blue_1.centery = 100
                     blue_position_1 = 3
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(420, 480) and placer.blue_1.y in range(420, 480):
                     placer.blue_1.centerx = 450
                     placer.blue_1.centery = 450
                     blue_position_1 = 9
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(70, 130) and placer.blue_1.y in range(245, 315):
                     placer.blue_1.centerx = 100
                     placer.blue_1.centery = 275
                     blue_position_1 = 4
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(245, 315) and placer.blue_1.y in range(70, 130):
                     placer.blue_1.centerx = 275
                     placer.blue_1.centery = 100
                     blue_position_1 = 2
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(245, 315) and placer.blue_1.y in range(420, 480):
                     placer.blue_1.centerx = 275
                     placer.blue_1.centery = 450
                     blue_position_1 = 8
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(420, 480) and placer.blue_1.y in range(245, 315):
                     placer.blue_1.centerx = 450
                     placer.blue_1.centery = 275
                     blue_position_1 = 6
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_1.x in range(245, 315) and placer.blue_1.y in range(245, 315):
                     placer.blue_1.centerx = 275
                     placer.blue_1.centery = 275
                     blue_position_1 = 5
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
         elif held_2 and placer.blue_2.collidepoint(event.pos):
@@ -189,54 +199,63 @@ def blue_mouse_moves():
                     placer.blue_2.centerx = 100
                     placer.blue_2.centery = 100
                     blue_position_2 = 1
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(70, 130) and placer.blue_2.y in range(430, 480):
                     placer.blue_2.centerx = 100
                     placer.blue_2.centery = 450
                     blue_position_2 = 7
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(420, 480) and placer.blue_2.y in range(70, 130):
                     placer.blue_2.centerx = 450
                     placer.blue_2.centery = 100
                     blue_position_2 = 3
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(420, 480) and placer.blue_2.y in range(420, 480):
                     placer.blue_2.centerx = 450
                     placer.blue_2.centery = 450
                     blue_position_2 = 9
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(70, 130) and placer.blue_2.y in range(245, 315):
                     placer.blue_2.centerx = 100
                     placer.blue_2.centery = 275
                     blue_position_2 = 4
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(245, 315) and placer.blue_2.y in range(70, 130):
                     placer.blue_2.centerx = 275
                     placer.blue_2.centery = 100
                     blue_position_2 = 2
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(245, 315) and placer.blue_2.y in range(420, 480):
                     placer.blue_2.centerx = 275
                     placer.blue_2.centery = 450
                     blue_position_2 = 8
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(420, 480) and placer.blue_2.y in range(245, 315):
                     placer.blue_2.centerx = 450
                     placer.blue_2.centery = 275
                     blue_position_2 = 6
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_2.x in range(245, 315) and placer.blue_2.y in range(245, 315):
                     placer.blue_2.centerx = 275
                     placer.blue_2.centery = 275
                     blue_position_2 = 5
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
         elif held_3 and placer.blue_3.collidepoint(event.pos):
@@ -249,54 +268,63 @@ def blue_mouse_moves():
                     placer.blue_3.centerx = 100
                     placer.blue_3.centery = 100
                     blue_position_3 = 1
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(70, 130) and placer.blue_3.y in range(430, 480):
                     placer.blue_3.centerx = 100
                     placer.blue_3.centery = 450
                     blue_position_3 = 7
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(420, 480) and placer.blue_3.y in range(70, 130):
                     placer.blue_3.centerx = 450
                     placer.blue_3.centery = 100
                     blue_position_3 = 3
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(420, 480) and placer.blue_3.y in range(420, 480):
                     placer.blue_3.centerx = 450
                     placer.blue_3.centery = 450
                     blue_position_3 = 9
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(70, 130) and placer.blue_3.y in range(245, 315):
                     placer.blue_3.centerx = 100
                     placer.blue_3.centery = 275
                     blue_position_3 = 4
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(245, 315) and placer.blue_3.y in range(70, 130):
                     placer.blue_3.centerx = 275
                     placer.blue_3.centery = 100
                     blue_position_3 = 2
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(245, 315) and placer.blue_3.y in range(420, 480):
                     placer.blue_3.centerx = 275
                     placer.blue_3.centery = 450
                     blue_position_3 = 8
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(420, 480) and placer.blue_3.y in range(245, 315):
                     placer.blue_3.centerx = 450
                     placer.blue_3.centery = 275
                     blue_position_3 = 6
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
                 elif placer.blue_3.x in range(245, 315) and placer.blue_3.y in range(245, 315):
                     placer.blue_3.centerx = 275
                     placer.blue_3.centery = 275
                     blue_position_3 = 5
+                    placer_sound.play()
                     message_1 = "Yellow's turn"
 
 
@@ -340,54 +368,63 @@ def yellow_mouse_moves():
                     placer.yellow_1.centerx = 100
                     placer.yellow_1.centery = 100
                     yellow_position_1 = 1
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(70, 130) and placer.yellow_1.y in range(430, 480):
                     placer.yellow_1.centerx = 100
                     placer.yellow_1.centery = 450
                     yellow_position_1 = 7
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(420, 480) and placer.yellow_1.y in range(70, 130):
                     placer.yellow_1.centerx = 450
                     placer.yellow_1.centery = 100
                     yellow_position_1 = 3
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(420, 480) and placer.yellow_1.y in range(420, 480):
                     placer.yellow_1.centerx = 450
                     placer.yellow_1.centery = 450
                     yellow_position_1 = 9
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(70, 130) and placer.yellow_1.y in range(245, 315):
                     placer.yellow_1.centerx = 100
                     placer.yellow_1.centery = 275
                     yellow_position_1 = 4
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(245, 315) and placer.yellow_1.y in range(70, 130):
                     placer.yellow_1.centerx = 275
                     placer.yellow_1.centery = 100
                     yellow_position_1 = 2
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(245, 315) and placer.yellow_1.y in range(420, 480):
                     placer.yellow_1.centerx = 275
                     placer.yellow_1.centery = 450
                     yellow_position_1 = 8
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(420, 480) and placer.yellow_1.y in range(245, 315):
                     placer.yellow_1.centerx = 450
                     placer.yellow_1.centery = 275
                     yellow_position_1 = 6
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_1.x in range(245, 315) and placer.yellow_1.y in range(245, 315):
                     placer.yellow_1.centerx = 275
                     placer.yellow_1.centery = 275
                     yellow_position_1 = 5
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
         elif held_2 and placer.yellow_2.collidepoint(event.pos):
@@ -400,54 +437,63 @@ def yellow_mouse_moves():
                     placer.yellow_2.centerx = 100
                     placer.yellow_2.centery = 100
                     yellow_position_2 = 1
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(70, 130) and placer.yellow_2.y in range(430, 480):
                     placer.yellow_2.centerx = 100
                     placer.yellow_2.centery = 450
                     yellow_position_2 = 7
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(420, 480) and placer.yellow_2.y in range(70, 130):
                     placer.yellow_2.centerx = 450
                     placer.yellow_2.centery = 100
                     yellow_position_2 = 3
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(420, 480) and placer.yellow_2.y in range(420, 480):
                     placer.yellow_2.centerx = 450
                     placer.yellow_2.centery = 450
                     yellow_position_2 = 9
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(70, 130) and placer.yellow_2.y in range(245, 315):
                     placer.yellow_2.centerx = 100
                     placer.yellow_2.centery = 275
                     yellow_position_2 = 4
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(245, 315) and placer.yellow_2.y in range(70, 130):
                     placer.yellow_2.centerx = 275
                     placer.yellow_2.centery = 100
                     yellow_position_2 = 2
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(245, 315) and placer.yellow_2.y in range(420, 480):
                     placer.yellow_2.centerx = 275
                     placer.yellow_2.centery = 450
                     yellow_position_2 = 8
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(420, 480) and placer.yellow_2.y in range(245, 315):
                     placer.yellow_2.centerx = 450
                     placer.yellow_2.centery = 275
                     yellow_position_2 = 6
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_2.x in range(245, 315) and placer.yellow_2.y in range(245, 315):
                     placer.yellow_2.centerx = 275
                     placer.yellow_2.centery = 275
                     yellow_position_2 = 5
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
         elif held_3 and placer.yellow_3.collidepoint(event.pos):
@@ -460,54 +506,63 @@ def yellow_mouse_moves():
                     placer.yellow_3.centerx = 100
                     placer.yellow_3.centery = 100
                     yellow_position_3 = 1
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(70, 130) and placer.yellow_3.y in range(430, 480):
                     placer.yellow_3.centerx = 100
                     placer.yellow_3.centery = 450
                     yellow_position_3 = 7
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(420, 480) and placer.yellow_3.y in range(70, 130):
                     placer.yellow_3.centerx = 450
                     placer.yellow_3.centery = 100
                     yellow_position_3 = 3
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(420, 480) and placer.yellow_3.y in range(420, 480):
                     placer.yellow_3.centerx = 450
                     placer.yellow_3.centery = 450
                     yellow_position_3 = 9
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(70, 130) and placer.yellow_3.y in range(245, 315):
                     placer.yellow_3.centerx = 100
                     placer.yellow_3.centery = 275
                     yellow_position_3 = 4
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(245, 315) and placer.yellow_3.y in range(70, 130):
                     placer.yellow_3.centerx = 275
                     placer.yellow_3.centery = 100
                     yellow_position_3 = 2
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(245, 315) and placer.yellow_3.y in range(420, 480):
                     placer.yellow_3.centerx = 275
                     placer.yellow_3.centery = 450
                     yellow_position_3 = 8
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(420, 480) and placer.yellow_3.y in range(245, 315):
                     placer.yellow_3.centerx = 450
                     placer.yellow_3.centery = 275
                     yellow_position_3 = 6
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
                 elif placer.yellow_3.x in range(245, 315) and placer.yellow_3.y in range(245, 315):
                     placer.yellow_3.centerx = 275
                     placer.yellow_3.centery = 275
                     yellow_position_3 = 5
+                    placer_sound.play()
                     message_1 = "Blue's turn"
 
 
@@ -520,30 +575,35 @@ def win_blue():
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 2 and blue_position_2 == 1 and blue_position_3 == 3:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 1 and blue_position_2 == 3 and blue_position_3 == 2:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 3 and blue_position_2 == 2 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 2 and blue_position_2 == 3 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
 
     # row 2
     if blue_position_1 == 4 and blue_position_2 == 5 and blue_position_3 == 6:
@@ -552,63 +612,72 @@ def win_blue():
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 4 and blue_position_3 == 6:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 4 and blue_position_2 == 6 and blue_position_3 == 5:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 6 and blue_position_2 == 5 and blue_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 6 and blue_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
 
     # row 3
     if blue_position_1 == 7 and blue_position_2 == 8 and blue_position_3 == 9:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
-        if winner:
-            draw_line()
+        draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 8 and blue_position_2 == 7 and blue_position_3 == 9:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 7 and blue_position_2 == 9 and blue_position_3 == 8:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 9 and blue_position_2 == 8 and blue_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 8 and blue_position_2 == 9 and blue_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
 
     # column 1
     if blue_position_1 == 1 and blue_position_2 == 4 and blue_position_3 == 7:
@@ -617,30 +686,35 @@ def win_blue():
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 4 and blue_position_2 == 1 and blue_position_3 == 7:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 1 and blue_position_2 == 7 and blue_position_3 == 4:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 7 and blue_position_2 == 4 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 4 and blue_position_2 == 7 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
 
     # column 2
     if blue_position_1 == 2 and blue_position_2 == 5 and blue_position_3 == 8:
@@ -649,30 +723,35 @@ def win_blue():
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 2 and blue_position_3 == 8:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 2 and blue_position_2 == 8 and blue_position_3 == 5:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 8 and blue_position_2 == 5 and blue_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 8 and blue_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         winner = True
         draw_line()
         message_1 = "Blue won!!!"
+        win_sound.play()
 
     # column 3
     if blue_position_1 == 3 and blue_position_2 == 6 and blue_position_3 == 9:
@@ -681,30 +760,35 @@ def win_blue():
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 6 and blue_position_2 == 3 and blue_position_3 == 9:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 3 and blue_position_2 == 9 and blue_position_3 == 6:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 9 and blue_position_2 == 6 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 6 and blue_position_2 == 9 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
 
     # cross 1
     if blue_position_1 == 1 and blue_position_2 == 5 and blue_position_3 == 9:
@@ -713,30 +797,35 @@ def win_blue():
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 1 and blue_position_3 == 9:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 1 and blue_position_2 == 9 and blue_position_3 == 5:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 9 and blue_position_2 == 5 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 9 and blue_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
 
     # cross 2
     if blue_position_1 == 3 and blue_position_2 == 5 and blue_position_3 == 7:
@@ -745,30 +834,35 @@ def win_blue():
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 3 and blue_position_3 == 7:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 3 and blue_position_2 == 7 and blue_position_3 == 5:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 7 and blue_position_2 == 5 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
     if blue_position_1 == 5 and blue_position_2 == 7 and blue_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Blue won!!!"
+        win_sound.play()
 
 
 def win_yellow():
@@ -780,30 +874,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 2 and yellow_position_2 == 1 and yellow_position_3 == 3:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 1 and yellow_position_2 == 3 and yellow_position_3 == 2:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 3 and yellow_position_2 == 2 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 2 and yellow_position_2 == 3 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 100)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
     # row 2
     if yellow_position_1 == 4 and yellow_position_2 == 5 and yellow_position_3 == 6:
@@ -812,30 +911,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 4 and yellow_position_3 == 6:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 4 and yellow_position_2 == 6 and yellow_position_3 == 5:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 6 and yellow_position_2 == 5 and yellow_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 6 and yellow_position_3 == 4:
         start_pos = (100, 275)
         end_pos = (450, 275)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
     # row 3
     if yellow_position_1 == 7 and yellow_position_2 == 8 and yellow_position_3 == 9:
@@ -844,30 +948,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 8 and yellow_position_2 == 7 and yellow_position_3 == 9:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 7 and yellow_position_2 == 9 and yellow_position_3 == 8:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 9 and yellow_position_2 == 8 and yellow_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 8 and yellow_position_2 == 9 and yellow_position_3 == 7:
         start_pos = (100, 450)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
     # column 1
     if yellow_position_1 == 1 and yellow_position_2 == 4 and yellow_position_3 == 7:
@@ -876,30 +985,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 4 and yellow_position_2 == 1 and yellow_position_3 == 7:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 1 and yellow_position_2 == 7 and yellow_position_3 == 4:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 7 and yellow_position_2 == 4 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 4 and yellow_position_2 == 7 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
     # column 2
     if yellow_position_1 == 2 and yellow_position_2 == 5 and yellow_position_3 == 8:
@@ -908,30 +1022,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 2 and yellow_position_3 == 8:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 2 and yellow_position_2 == 7 and yellow_position_3 == 4:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 8 and yellow_position_2 == 5 and yellow_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 8 and yellow_position_3 == 2:
         start_pos = (275, 100)
         end_pos = (275, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
     # column 3
     if yellow_position_1 == 3 and yellow_position_2 == 6 and yellow_position_3 == 9:
@@ -940,30 +1059,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 6 and yellow_position_2 == 3 and yellow_position_3 == 9:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 3 and yellow_position_2 == 9 and yellow_position_3 == 6:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 9 and yellow_position_2 == 6 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 6 and yellow_position_2 == 9 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
     # cross 1
     if yellow_position_1 == 1 and yellow_position_2 == 5 and yellow_position_3 == 9:
@@ -972,30 +1096,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 1 and yellow_position_3 == 9:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 1 and yellow_position_2 == 9 and yellow_position_3 == 5:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 9 and yellow_position_2 == 5 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 9 and yellow_position_3 == 1:
         start_pos = (100, 100)
         end_pos = (450, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
     # cross 2
     if yellow_position_1 == 3 and yellow_position_2 == 5 and yellow_position_3 == 7:
@@ -1004,30 +1133,35 @@ def win_yellow():
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 3 and yellow_position_3 == 7:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 3 and yellow_position_2 == 7 and yellow_position_3 == 5:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 7 and yellow_position_2 == 5 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
     if yellow_position_1 == 5 and yellow_position_2 == 7 and yellow_position_3 == 3:
         start_pos = (450, 100)
         end_pos = (100, 450)
         draw_line()
         winner = True
         message_1 = "Yellow won!!!"
+        win_sound.play()
 
 
 def re_start():
