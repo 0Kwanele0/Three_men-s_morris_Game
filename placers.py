@@ -33,14 +33,10 @@ class Placers:
 
     def draw_yellow(self, screen):
         pg.draw.ellipse(screen, self.color, self.yellow_1)
-
         pg.draw.ellipse(screen, self.color, self.yellow_2)
-
         pg.draw.ellipse(screen, self.color, self.yellow_3)
 
     def draw_blue(self, screen):
         pg.draw.ellipse(screen, self._color, self.blue_1)
-
         pg.draw.ellipse(screen, self._color, self.blue_2)
-
         pg.draw.ellipse(screen, self._color, self.blue_3)

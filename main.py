@@ -14,31 +14,20 @@ screen = pg.display.set_mode((650, 590))
 pg.display.set_caption("Three men's morris")
 
 dragging = False
-offset_x = 0
-offset_y = 0
+offset_x, offset_y = 0, 0
 
-held_1 = False
-held_2 = False
-held_3 = False
+held_1, held_2, held_3 = False, False, False
+y_held_1, y_held_2, y_held_3 = False, False, False
 
-y_held_1 = False
-y_held_2 = False
-y_held_3 = False
-
-blue_position_1 = 0
-blue_position_2 = 0
-blue_position_3 = 0
-
-yellow_position_1 = 0
-yellow_position_2 = 0
-yellow_position_3 = 0
+blue_position_1, blue_position_2, blue_position_3 = 0, 0, 0
+yellow_position_1, yellow_position_2, yellow_position_3 = 0, 0, 0
 
 message_1 = "Blue start"
 res_message = "Restart"
 quit_message = "Quit"
 
-start_pos = (0, 0)
-end_pos = (0, 0)
+start_pos, end_pos = (0, 0), (0, 0)
+
 winner = False
 
 marker = Markers()
