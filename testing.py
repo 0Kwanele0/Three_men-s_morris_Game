@@ -4,36 +4,15 @@ from sys import exit
 pg.init()
 width = 750
 height = 590
-screen = pg.display.set_mode((width, height))
+window = pg.display.set_mode((width, height))
 
 drawn = False
 clock = pg.time.Clock()
-fps = 60
+fps = 260
 
 BLUE1, BLUE2, BLUE3 = False, False, False
 
 YELLOW1, YELLOW2, YELLOW3 = False, False, False
-
-
-selectable1 = True
-selectable2 = True
-selectable3 = True
-selectable4 = True
-selectable5 = True
-selectable6 = True
-selectable7 = True
-selectable8 = True
-selectable9 = True
-
-selectable1y = True
-selectable2y = True
-selectable3y = True
-selectable4y = True
-selectable5y = True
-selectable6y = True
-selectable7y = True
-selectable8y = True
-selectable9y = True
 
 
 class Placers:
@@ -165,7 +144,7 @@ class Marker:
 
 
 def blue_mousing():
-    global drawn, selectable1, BLUE1, BLUE2, BLUE3, selectable2, selectable3, selectable4, selectable5, selectable6, selectable7, selectable8, selectable9
+    global drawn, BLUE1, BLUE2, BLUE3
     # FOR SELECTING
     if event.type == pg.MOUSEBUTTONDOWN:
         if event.button == 1:
@@ -175,12 +154,12 @@ def blue_mousing():
                 placer.blue_border.centery = placer.blue_placer_1.centery
                 if not drawn:
                     placer.border_col = 'white'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = True
                     BLUE1 = True
                 else:
                     placer.border_col = 'darkblue'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = False
 
             # BLUE TWO
@@ -189,12 +168,12 @@ def blue_mousing():
                 placer.blue_border.centery = placer.blue_placer_2.centery
                 if not drawn:
                     placer.border_col = 'white'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = True
                     BLUE2 = True
                 else:
                     placer.border_col = 'darkblue'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = False
 
             # BLUE THREE
@@ -203,561 +182,292 @@ def blue_mousing():
                 placer.blue_border.centery = placer.blue_placer_3.centery
                 if not drawn:
                     placer.border_col = 'white'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = True
                     BLUE3 = True
                 else:
                     placer.border_col = 'darkblue'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = False
 
     # FOR MOVING
     if event.type == pg.MOUSEBUTTONDOWN:
         if event.button == 1:
             # BLUE ONE
-            if selectable1 and selectable1y:
-                if marker.marker_1.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_1.centerx
-                            placer.blue_placer_1.centery = marker.marker_1.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_1.centerx
-                            placer.blue_border.centery = marker.marker_1.centery
-                            selectable1 = False
-                            selectable9 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_1.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_1.centerx
+                        placer.blue_placer_1.centery = marker.marker_1.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_1.centerx
+                        placer.blue_border.centery = marker.marker_1.centery
+                        BLUE1 = False
 
-            if selectable2 and selectable2y:
-                if marker.marker_2.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_2.centerx
-                            placer.blue_placer_1.centery = marker.marker_2.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_2.centerx
-                            placer.blue_border.centery = marker.marker_2.centery
-                            selectable2 = False
-                            selectable1 = True
-                            selectable9 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_2.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_2.centerx
+                        placer.blue_placer_1.centery = marker.marker_2.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_2.centerx
+                        placer.blue_border.centery = marker.marker_2.centery
+                        BLUE1 = False
 
-            if selectable3 and selectable3y:
-                if marker.marker_3.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_3.centerx
-                            placer.blue_placer_1.centery = marker.marker_3.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_3.centerx
-                            placer.blue_border.centery = marker.marker_3.centery
-                            selectable3 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable9 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_3.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_3.centerx
+                        placer.blue_placer_1.centery = marker.marker_3.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_3.centerx
+                        placer.blue_border.centery = marker.marker_3.centery
+                        BLUE1 = False
 
-            if selectable4 and selectable4y:
-                if marker.marker_4.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_4.centerx
-                            placer.blue_placer_1.centery = marker.marker_4.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_4.centerx
-                            placer.blue_border.centery = marker.marker_4.centery
-                            selectable4 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable9 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_4.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_4.centerx
+                        placer.blue_placer_1.centery = marker.marker_4.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_4.centerx
+                        placer.blue_border.centery = marker.marker_4.centery
+                        BLUE1 = False
 
-            if selectable5 and selectable5y:
-                if marker.marker_5.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_5.centerx
-                            placer.blue_placer_1.centery = marker.marker_5.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_5.centerx
-                            placer.blue_border.centery = marker.marker_5.centery
-                            selectable5 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable9 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_5.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_5.centerx
+                        placer.blue_placer_1.centery = marker.marker_5.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_5.centerx
+                        placer.blue_border.centery = marker.marker_5.centery
+                        BLUE1 = False
 
-            if selectable6 and selectable6y:
-                if marker.marker_6.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_6.centerx
-                            placer.blue_placer_1.centery = marker.marker_6.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_6.centerx
-                            placer.blue_border.centery = marker.marker_6.centery
-                            selectable6 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable9 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_6.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_6.centerx
+                        placer.blue_placer_1.centery = marker.marker_6.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_6.centerx
+                        placer.blue_border.centery = marker.marker_6.centery
+                        BLUE1 = False
 
-            if selectable7 and selectable7y:
-                if marker.marker_7.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_7.centerx
-                            placer.blue_placer_1.centery = marker.marker_7.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_7.centerx
-                            placer.blue_border.centery = marker.marker_7.centery
-                            selectable7 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable9 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_7.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_7.centerx
+                        placer.blue_placer_1.centery = marker.marker_7.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_7.centerx
+                        placer.blue_border.centery = marker.marker_7.centery
+                        BLUE1 = False
 
-            if selectable8 and selectable7y:
-                if marker.marker_8.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_8.centerx
-                            placer.blue_placer_1.centery = marker.marker_8.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_8.centerx
-                            placer.blue_border.centery = marker.marker_8.centery
-                            selectable8 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable9 = True
-                            BLUE1 = False
-            if selectable9 and selectable9y:
-                if marker.marker_9.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE1:
-                            placer.blue_placer_1.centerx = marker.marker_9.centerx
-                            placer.blue_placer_1.centery = marker.marker_9.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_9.centerx
-                            placer.blue_border.centery = marker.marker_9.centery
-                            selectable9 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE1 = False
+            if marker.marker_8.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_8.centerx
+                        placer.blue_placer_1.centery = marker.marker_8.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_8.centerx
+                        placer.blue_border.centery = marker.marker_8.centery
+                        BLUE1 = False
+            if marker.marker_9.collidepoint(event.pos):
+                if drawn:
+                    if BLUE1:
+                        placer.blue_placer_1.centerx = marker.marker_9.centerx
+                        placer.blue_placer_1.centery = marker.marker_9.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_9.centerx
+                        placer.blue_border.centery = marker.marker_9.centery
+                        BLUE1 = False
 
             # BLUE TWO
-            if selectable1 and selectable1y:
-                if marker.marker_1.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_1.centerx
-                            placer.blue_placer_2.centery = marker.marker_1.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_1.centerx
-                            placer.blue_border.centery = marker.marker_1.centery
-                            selectable1 = False
-                            selectable9 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_1.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_1.centerx
+                        placer.blue_placer_2.centery = marker.marker_1.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_1.centerx
+                        placer.blue_border.centery = marker.marker_1.centery
+                        BLUE2 = False
 
-            if selectable2 and selectable2y:
-                if marker.marker_2.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_2.centerx
-                            placer.blue_placer_2.centery = marker.marker_2.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_2.centerx
-                            placer.blue_border.centery = marker.marker_2.centery
-                            selectable2 = False
-                            selectable1 = True
-                            selectable9 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_2.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_2.centerx
+                        placer.blue_placer_2.centery = marker.marker_2.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_2.centerx
+                        placer.blue_border.centery = marker.marker_2.centery
+                        BLUE2 = False
 
-            if selectable3 and selectable3y:
-                if marker.marker_3.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_3.centerx
-                            placer.blue_placer_2.centery = marker.marker_3.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_3.centerx
-                            placer.blue_border.centery = marker.marker_3.centery
-                            selectable3 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable9 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_3.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_3.centerx
+                        placer.blue_placer_2.centery = marker.marker_3.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_3.centerx
+                        placer.blue_border.centery = marker.marker_3.centery
+                        BLUE2 = False
 
-            if selectable4 and selectable4y:
-                if marker.marker_4.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_4.centerx
-                            placer.blue_placer_2.centery = marker.marker_4.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_4.centerx
-                            placer.blue_border.centery = marker.marker_4.centery
-                            selectable4 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable9 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_4.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_4.centerx
+                        placer.blue_placer_2.centery = marker.marker_4.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_4.centerx
+                        placer.blue_border.centery = marker.marker_4.centery
+                        BLUE2 = False
 
-            if selectable5 and selectable5y:
-                if marker.marker_5.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_5.centerx
-                            placer.blue_placer_2.centery = marker.marker_5.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_5.centerx
-                            placer.blue_border.centery = marker.marker_5.centery
-                            selectable5 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable9 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_5.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_5.centerx
+                        placer.blue_placer_2.centery = marker.marker_5.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_5.centerx
+                        placer.blue_border.centery = marker.marker_5.centery
+                        BLUE2 = False
 
-            if selectable6 and selectable6y:
-                if marker.marker_6.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_6.centerx
-                            placer.blue_placer_2.centery = marker.marker_6.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_6.centerx
-                            placer.blue_border.centery = marker.marker_6.centery
-                            selectable6 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable9 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_6.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_6.centerx
+                        placer.blue_placer_2.centery = marker.marker_6.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_6.centerx
+                        placer.blue_border.centery = marker.marker_6.centery
+                        BLUE2 = False
 
-            if selectable7 and selectable7y:
-                if marker.marker_7.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_7.centerx
-                            placer.blue_placer_2.centery = marker.marker_7.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_7.centerx
-                            placer.blue_border.centery = marker.marker_7.centery
-                            selectable7 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable9 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_7.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_7.centerx
+                        placer.blue_placer_2.centery = marker.marker_7.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_7.centerx
+                        placer.blue_border.centery = marker.marker_7.centery
+                        BLUE2 = False
 
-            if selectable8 and selectable8y:
-                if marker.marker_8.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_8.centerx
-                            placer.blue_placer_2.centery = marker.marker_8.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_8.centerx
-                            placer.blue_border.centery = marker.marker_8.centery
-                            selectable8 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable9 = True
-                            BLUE2 = False
-            if selectable9 and selectable9y:
-                if marker.marker_9.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE2:
-                            placer.blue_placer_2.centerx = marker.marker_9.centerx
-                            placer.blue_placer_2.centery = marker.marker_9.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_9.centerx
-                            placer.blue_border.centery = marker.marker_9.centery
-                            selectable9 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE2 = False
+            if marker.marker_8.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_8.centerx
+                        placer.blue_placer_2.centery = marker.marker_8.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_8.centerx
+                        placer.blue_border.centery = marker.marker_8.centery
+                        BLUE2 = False
+
+            if marker.marker_9.collidepoint(event.pos):
+                if drawn:
+                    if BLUE2:
+                        placer.blue_placer_2.centerx = marker.marker_9.centerx
+                        placer.blue_placer_2.centery = marker.marker_9.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_9.centerx
+                        placer.blue_border.centery = marker.marker_9.centery
+                        BLUE2 = False
 
             # BLUE THREE
-            if selectable1 and selectable1y:
-                if marker.marker_1.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_1.centerx
-                            placer.blue_placer_3.centery = marker.marker_1.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_1.centerx
-                            placer.blue_border.centery = marker.marker_1.centery
-                            selectable1 = False
-                            selectable9 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_1.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_1.centerx
+                        placer.blue_placer_3.centery = marker.marker_1.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_1.centerx
+                        placer.blue_border.centery = marker.marker_1.centery
+                        BLUE3 = False
 
-            if selectable2 and selectable2y:
-                if marker.marker_2.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_2.centerx
-                            placer.blue_placer_3.centery = marker.marker_2.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_2.centerx
-                            placer.blue_border.centery = marker.marker_2.centery
-                            selectable2 = False
-                            selectable1 = True
-                            selectable9 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_2.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_2.centerx
+                        placer.blue_placer_3.centery = marker.marker_2.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_2.centerx
+                        placer.blue_border.centery = marker.marker_2.centery
+                        BLUE3 = False
 
-            if selectable3 and selectable3y:
-                if marker.marker_3.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_3.centerx
-                            placer.blue_placer_3.centery = marker.marker_3.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_3.centerx
-                            placer.blue_border.centery = marker.marker_3.centery
-                            selectable3 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable9 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_3.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_3.centerx
+                        placer.blue_placer_3.centery = marker.marker_3.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_3.centerx
+                        placer.blue_border.centery = marker.marker_3.centery
+                        BLUE3 = False
 
-            if selectable4 and selectable4y:
-                if marker.marker_4.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_4.centerx
-                            placer.blue_placer_3.centery = marker.marker_4.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_4.centerx
-                            placer.blue_border.centery = marker.marker_4.centery
-                            selectable4 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable9 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_4.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_4.centerx
+                        placer.blue_placer_3.centery = marker.marker_4.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_4.centerx
+                        placer.blue_border.centery = marker.marker_4.centery
+                        BLUE3 = False
 
-            if selectable5 and selectable5y:
-                if marker.marker_5.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_5.centerx
-                            placer.blue_placer_3.centery = marker.marker_5.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_5.centerx
-                            placer.blue_border.centery = marker.marker_5.centery
-                            selectable5 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable9 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_5.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_5.centerx
+                        placer.blue_placer_3.centery = marker.marker_5.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_5.centerx
+                        placer.blue_border.centery = marker.marker_5.centery
+                        BLUE3 = False
 
-            if selectable6 and selectable6y:
-                if marker.marker_6.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_6.centerx
-                            placer.blue_placer_3.centery = marker.marker_6.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_6.centerx
-                            placer.blue_border.centery = marker.marker_6.centery
-                            selectable6 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable9 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_6.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_6.centerx
+                        placer.blue_placer_3.centery = marker.marker_6.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_6.centerx
+                        placer.blue_border.centery = marker.marker_6.centery
+                        BLUE3 = False
 
-            if selectable7 and selectable7y:
-                if marker.marker_7.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_7.centerx
-                            placer.blue_placer_3.centery = marker.marker_7.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_7.centerx
-                            placer.blue_border.centery = marker.marker_7.centery
-                            selectable7 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable9 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_7.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_7.centerx
+                        placer.blue_placer_3.centery = marker.marker_7.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_7.centerx
+                        placer.blue_border.centery = marker.marker_7.centery
+                        BLUE3 = False
 
-            if selectable8 and selectable8y:
-                if marker.marker_8.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_8.centerx
-                            placer.blue_placer_3.centery = marker.marker_8.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_8.centerx
-                            placer.blue_border.centery = marker.marker_8.centery
-                            selectable8 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable9 = True
-                            BLUE3 = False
-            if selectable9 and selectable9y:
-                if marker.marker_9.collidepoint(event.pos):
-                    if drawn:
-                        if BLUE3:
-                            placer.blue_placer_3.centerx = marker.marker_9.centerx
-                            placer.blue_placer_3.centery = marker.marker_9.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_9.centerx
-                            placer.blue_border.centery = marker.marker_9.centery
-                            selectable9 = False
-                            selectable1 = True
-                            selectable2 = True
-                            selectable3 = True
-                            selectable4 = True
-                            selectable5 = True
-                            selectable6 = True
-                            selectable7 = True
-                            selectable8 = True
-                            BLUE3 = False
+            if marker.marker_8.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_8.centerx
+                        placer.blue_placer_3.centery = marker.marker_8.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_8.centerx
+                        placer.blue_border.centery = marker.marker_8.centery
+                        BLUE3 = False
+
+            if marker.marker_9.collidepoint(event.pos):
+                if drawn:
+                    if BLUE3:
+                        placer.blue_placer_3.centerx = marker.marker_9.centerx
+                        placer.blue_placer_3.centery = marker.marker_9.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_9.centerx
+                        placer.blue_border.centery = marker.marker_9.centery
+                        BLUE3 = False
 
 
 def yellow_mousing():
-    global drawn, selectable1, BLUE1, BLUE2, BLUE3, YELLOW1, YELLOW2, YELLOW3, selectable2, selectable3, selectable4, selectable5, selectable6, selectable7, selectable8, selectable9
-    global selectable1y, selectable2y, selectable3y, selectable4y, selectable5y, selectable6y, selectable7y, selectable8y, selectable9y
+    global drawn, BLUE1, BLUE2, BLUE3, YELLOW1, YELLOW2, YELLOW3
     # FOR SELECTING
     if event.type == pg.MOUSEBUTTONDOWN:
         if event.button == 1:
@@ -767,12 +477,12 @@ def yellow_mousing():
                 placer.blue_border.centery = placer.yellow_placer_1.centery
                 if not drawn:
                     placer.border_col = 'white'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = True
                     YELLOW1 = True
                 else:
                     placer.border_col = 'darkblue'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = False
 
             # YELLOW TWO
@@ -781,12 +491,12 @@ def yellow_mousing():
                 placer.blue_border.centery = placer.yellow_placer_2.centery
                 if not drawn:
                     placer.border_col = 'white'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = True
                     YELLOW2 = True
                 else:
                     placer.border_col = 'darkblue'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = False
 
             # YELLOW THREE
@@ -795,12 +505,12 @@ def yellow_mousing():
                 placer.blue_border.centery = placer.yellow_placer_3.centery
                 if not drawn:
                     placer.border_col = 'white'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = True
                     YELLOW3 = True
                 else:
                     placer.border_col = 'darkblue'
-                    placer.draw_boarder(screen)
+                    placer.draw_boarder(window)
                     drawn = False
 
     # FOR MOVING
@@ -808,544 +518,277 @@ def yellow_mousing():
         if event.button == 1:
 
             # YELLOW ONE
-            if selectable1:
-                if marker.marker_1.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_1.centerx
-                            placer.yellow_placer_1.centery = marker.marker_1.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_1.centerx
-                            placer.blue_border.centery = marker.marker_1.centery
-                            selectable1, selectable1y = False, False
-                            selectable9, selectable9y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_1.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_1.centerx
+                        placer.yellow_placer_1.centery = marker.marker_1.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_1.centerx
+                        placer.blue_border.centery = marker.marker_1.centery
+                        YELLOW1 = False
 
-            if selectable2:
-                if marker.marker_2.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_2.centerx
-                            placer.yellow_placer_1.centery = marker.marker_2.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_2.centerx
-                            placer.blue_border.centery = marker.marker_2.centery
-                            selectable2, selectable2y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable9y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_2.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_2.centerx
+                        placer.yellow_placer_1.centery = marker.marker_2.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_2.centerx
+                        placer.blue_border.centery = marker.marker_2.centery
+                        YELLOW1 = False
 
-            if selectable3:
-                if marker.marker_3.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_3.centerx
-                            placer.yellow_placer_1.centery = marker.marker_3.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_3.centerx
-                            placer.blue_border.centery = marker.marker_3.centery
-                            selectable3, selectable3y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_3.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_3.centerx
+                        placer.yellow_placer_1.centery = marker.marker_3.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_3.centerx
+                        placer.blue_border.centery = marker.marker_3.centery
+                        YELLOW1 = False
 
-            if selectable4:
-                if marker.marker_4.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_4.centerx
-                            placer.yellow_placer_1.centery = marker.marker_4.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_4.centerx
-                            placer.blue_border.centery = marker.marker_4.centery
-                            selectable4, selectable4y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_4.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_4.centerx
+                        placer.yellow_placer_1.centery = marker.marker_4.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_4.centerx
+                        placer.blue_border.centery = marker.marker_4.centery
+                        YELLOW1 = False
 
-            if selectable5:
-                if marker.marker_5.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_5.centerx
-                            placer.yellow_placer_1.centery = marker.marker_5.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_5.centerx
-                            placer.blue_border.centery = marker.marker_5.centery
-                            selectable5, selectable5y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_5.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_5.centerx
+                        placer.yellow_placer_1.centery = marker.marker_5.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_5.centerx
+                        placer.blue_border.centery = marker.marker_5.centery
+                        YELLOW1 = False
 
-            if selectable6:
-                if marker.marker_6.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_6.centerx
-                            placer.yellow_placer_1.centery = marker.marker_6.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_6.centerx
-                            placer.blue_border.centery = marker.marker_6.centery
-                            selectable6, selectable6y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_6.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_6.centerx
+                        placer.yellow_placer_1.centery = marker.marker_6.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_6.centerx
+                        placer.blue_border.centery = marker.marker_6.centery
+                        YELLOW1 = False
 
-            if selectable7:
-                if marker.marker_7.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_7.centerx
-                            placer.yellow_placer_1.centery = marker.marker_7.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_7.centerx
-                            placer.blue_border.centery = marker.marker_7.centery
-                            selectable7, selectable7y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_7.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_7.centerx
+                        placer.yellow_placer_1.centery = marker.marker_7.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_7.centerx
+                        placer.blue_border.centery = marker.marker_7.centery
+                        YELLOW1 = False
 
-            if selectable8:
-                if marker.marker_8.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_8.centerx
-                            placer.yellow_placer_1.centery = marker.marker_8.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_8.centerx
-                            placer.blue_border.centery = marker.marker_8.centery
-                            selectable8, selectable8y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable9, selectable9y = True, True
-                            YELLOW1 = False
-            if selectable9:
-                if marker.marker_9.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW1:
-                            placer.yellow_placer_1.centerx = marker.marker_9.centerx
-                            placer.yellow_placer_1.centery = marker.marker_9.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_9.centerx
-                            placer.blue_border.centery = marker.marker_9.centery
-                            selectable9, selectable9y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW1 = False
+            if marker.marker_8.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_8.centerx
+                        placer.yellow_placer_1.centery = marker.marker_8.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_8.centerx
+                        placer.blue_border.centery = marker.marker_8.centery
+                        YELLOW1 = False
+
+            if marker.marker_9.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW1:
+                        placer.yellow_placer_1.centerx = marker.marker_9.centerx
+                        placer.yellow_placer_1.centery = marker.marker_9.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_9.centerx
+                        placer.blue_border.centery = marker.marker_9.centery
+                        YELLOW1 = False
 
             # YELLOW TWO
-            if selectable1:
-                if marker.marker_1.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_1.centerx
-                            placer.yellow_placer_2.centery = marker.marker_1.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_1.centerx
-                            placer.blue_border.centery = marker.marker_1.centery
-                            selectable1, selectable1y = False, False
-                            selectable6, selectable6y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_1.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_1.centerx
+                        placer.yellow_placer_2.centery = marker.marker_1.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_1.centerx
+                        placer.blue_border.centery = marker.marker_1.centery
+                        YELLOW2 = False
 
-            if selectable2:
-                if marker.marker_2.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_2.centerx
-                            placer.yellow_placer_2.centery = marker.marker_2.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_2.centerx
-                            placer.blue_border.centery = marker.marker_2.centery
-                            selectable2, selectable2y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_2.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_2.centerx
+                        placer.yellow_placer_2.centery = marker.marker_2.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_2.centerx
+                        placer.blue_border.centery = marker.marker_2.centery
+                        YELLOW2 = False
 
-            if selectable3:
-                if marker.marker_3.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_3.centerx
-                            placer.yellow_placer_2.centery = marker.marker_3.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_3.centerx
-                            placer.blue_border.centery = marker.marker_3.centery
-                            selectable3, selectable3y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_3.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_3.centerx
+                        placer.yellow_placer_2.centery = marker.marker_3.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_3.centerx
+                        placer.blue_border.centery = marker.marker_3.centery
+                        YELLOW2 = False
 
-            if selectable4:
-                if marker.marker_4.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_4.centerx
-                            placer.yellow_placer_2.centery = marker.marker_4.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_4.centerx
-                            placer.blue_border.centery = marker.marker_4.centery
-                            selectable4, selectable4y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_4.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_4.centerx
+                        placer.yellow_placer_2.centery = marker.marker_4.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_4.centerx
+                        placer.blue_border.centery = marker.marker_4.centery
+                        YELLOW2 = False
 
-            if selectable5:
-                if marker.marker_5.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_5.centerx
-                            placer.yellow_placer_2.centery = marker.marker_5.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_5.centerx
-                            placer.blue_border.centery = marker.marker_5.centery
-                            selectable5, selectable5y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_5.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_5.centerx
+                        placer.yellow_placer_2.centery = marker.marker_5.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_5.centerx
+                        placer.blue_border.centery = marker.marker_5.centery
+                        YELLOW2 = False
 
-            if selectable6:
-                if marker.marker_6.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_6.centerx
-                            placer.yellow_placer_2.centery = marker.marker_6.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_6.centerx
-                            placer.blue_border.centery = marker.marker_6.centery
-                            selectable6, selectable6y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_6.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_6.centerx
+                        placer.yellow_placer_2.centery = marker.marker_6.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_6.centerx
+                        placer.blue_border.centery = marker.marker_6.centery
+                        YELLOW2 = False
 
-            if selectable7:
-                if marker.marker_7.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_7.centerx
-                            placer.yellow_placer_2.centery = marker.marker_7.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_7.centerx
-                            placer.blue_border.centery = marker.marker_7.centery
-                            selectable7, selectable7y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_7.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_7.centerx
+                        placer.yellow_placer_2.centery = marker.marker_7.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_7.centerx
+                        placer.blue_border.centery = marker.marker_7.centery
+                        YELLOW2 = False
 
-            if selectable8:
-                if marker.marker_8.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_8.centerx
-                            placer.yellow_placer_2.centery = marker.marker_8.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_8.centerx
-                            placer.blue_border.centery = marker.marker_8.centery
-                            selectable8, selectable8y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable6, selectable6y = True, True
-                            YELLOW2 = False
-            if selectable9:
-                if marker.marker_9.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW2:
-                            placer.yellow_placer_2.centerx = marker.marker_9.centerx
-                            placer.yellow_placer_2.centery = marker.marker_9.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_9.centerx
-                            placer.blue_border.centery = marker.marker_9.centery
-                            selectable9, selectable9y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW2 = False
+            if marker.marker_8.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_8.centerx
+                        placer.yellow_placer_2.centery = marker.marker_8.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_8.centerx
+                        placer.blue_border.centery = marker.marker_8.centery
+                        YELLOW2 = False
+
+            if marker.marker_9.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW2:
+                        placer.yellow_placer_2.centerx = marker.marker_9.centerx
+                        placer.yellow_placer_2.centery = marker.marker_9.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_9.centerx
+                        placer.blue_border.centery = marker.marker_9.centery
+                        YELLOW2 = False
 
             # YELLOW THREE
-            if selectable1:
-                if marker.marker_1.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_1.centerx
-                            placer.yellow_placer_3.centery = marker.marker_1.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_1.centerx
-                            placer.blue_border.centery = marker.marker_1.centery
-                            selectable1, selectable1y = False, False
-                            selectable9, selectable9y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_1.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_1.centerx
+                        placer.yellow_placer_3.centery = marker.marker_1.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_1.centerx
+                        placer.blue_border.centery = marker.marker_1.centery
+                        YELLOW3 = False
 
-            if selectable2:
-                if marker.marker_2.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_2.centerx
-                            placer.yellow_placer_3.centery = marker.marker_2.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_2.centerx
-                            placer.blue_border.centery = marker.marker_2.centery
-                            selectable2, selectable2y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_2.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_2.centerx
+                        placer.yellow_placer_3.centery = marker.marker_2.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_2.centerx
+                        placer.blue_border.centery = marker.marker_2.centery
+                        YELLOW3 = False
 
-            if selectable3:
-                if marker.marker_3.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_3.centerx
-                            placer.yellow_placer_3.centery = marker.marker_3.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_3.centerx
-                            placer.blue_border.centery = marker.marker_3.centery
-                            selectable3, selectable3y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_3.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_3.centerx
+                        placer.yellow_placer_3.centery = marker.marker_3.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_3.centerx
+                        placer.blue_border.centery = marker.marker_3.centery
+                        YELLOW3 = False
 
-            if selectable4:
-                if marker.marker_4.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_4.centerx
-                            placer.yellow_placer_3.centery = marker.marker_4.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_4.centerx
-                            placer.blue_border.centery = marker.marker_4.centery
-                            selectable4, selectable4y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_4.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_4.centerx
+                        placer.yellow_placer_3.centery = marker.marker_4.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_4.centerx
+                        placer.blue_border.centery = marker.marker_4.centery
+                        YELLOW3 = False
 
-            if selectable5:
-                if marker.marker_5.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_5.centerx
-                            placer.yellow_placer_3.centery = marker.marker_5.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_5.centerx
-                            placer.blue_border.centery = marker.marker_5.centery
-                            selectable5, selectable5y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_5.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_5.centerx
+                        placer.yellow_placer_3.centery = marker.marker_5.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_5.centerx
+                        placer.blue_border.centery = marker.marker_5.centery
+                        YELLOW3 = False
 
-            if selectable6:
-                if marker.marker_6.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_6.centerx
-                            placer.yellow_placer_3.centery = marker.marker_6.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_6.centerx
-                            placer.blue_border.centery = marker.marker_6.centery
-                            selectable6, selectable6y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_6.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_6.centerx
+                        placer.yellow_placer_3.centery = marker.marker_6.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_6.centerx
+                        placer.blue_border.centery = marker.marker_6.centery
+                        YELLOW3 = False
 
-            if selectable7:
-                if marker.marker_7.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_7.centerx
-                            placer.yellow_placer_3.centery = marker.marker_7.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_7.centerx
-                            placer.blue_border.centery = marker.marker_7.centery
-                            selectable7, selectable7y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable9, selectable9y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_7.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_7.centerx
+                        placer.yellow_placer_3.centery = marker.marker_7.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_7.centerx
+                        placer.blue_border.centery = marker.marker_7.centery
+                        YELLOW3 = False
 
-            if selectable8:
-                if marker.marker_8.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_8.centerx
-                            placer.yellow_placer_3.centery = marker.marker_8.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_8.centerx
-                            placer.blue_border.centery = marker.marker_8.centery
-                            selectable8, selectable8y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable9, selectable9y = True, True
-                            YELLOW3 = False
-            if selectable9:
-                if marker.marker_9.collidepoint(event.pos):
-                    if drawn:
-                        if YELLOW3:
-                            placer.yellow_placer_3.centerx = marker.marker_9.centerx
-                            placer.yellow_placer_3.centery = marker.marker_9.centery
-                            drawn = False
-                            placer.blue_border.centerx = marker.marker_9.centerx
-                            placer.blue_border.centery = marker.marker_9.centery
-                            selectable9, selectable9y = False, False
-                            selectable1, selectable1y = True, True
-                            selectable2, selectable2y = True, True
-                            selectable3, selectable3y = True, True
-                            selectable4, selectable4y = True, True
-                            selectable5, selectable5y = True, True
-                            selectable6, selectable6y = True, True
-                            selectable7, selectable7y = True, True
-                            selectable8, selectable8y = True, True
-                            YELLOW3 = False
+            if marker.marker_8.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_8.centerx
+                        placer.yellow_placer_3.centery = marker.marker_8.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_8.centerx
+                        placer.blue_border.centery = marker.marker_8.centery
+                        YELLOW3 = False
+
+            if marker.marker_9.collidepoint(event.pos):
+                if drawn:
+                    if YELLOW3:
+                        placer.yellow_placer_3.centerx = marker.marker_9.centerx
+                        placer.yellow_placer_3.centery = marker.marker_9.centery
+                        drawn = False
+                        placer.blue_border.centerx = marker.marker_9.centerx
+                        placer.blue_border.centery = marker.marker_9.centery
+                        YELLOW3 = False
 
 
 marker = Marker()
@@ -1357,11 +800,11 @@ while True:
         blue_mousing()
         yellow_mousing()
 
-    screen.fill((222, 14, 188))
-    draw_board(screen)
-    placer.draw_boarder(screen)
-    marker.draw_marker(screen)
-    placer.draw_blues(screen)
-    placer.draw_yellows(screen)
+    window.fill((222, 14, 188))
+    draw_board(window)
+    placer.draw_boarder(window)
+    marker.draw_marker(window)
+    placer.draw_blues(window)
+    placer.draw_yellows(window)
     pg.display.update()
     clock.tick(fps)
