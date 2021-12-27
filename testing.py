@@ -146,6 +146,15 @@ class Marker:
 def blue_mousing():
     global drawn, BLUE1, BLUE2, BLUE3
     # FOR SELECTING
+    def moveMove(drawn, placer, marker, border, move):
+        if drawn:
+            if move:
+                placer.centerx = marker.centerx
+                placer.centery = marker.centery
+                drawn = False
+                border.centerx = marker.centerx
+                border.centery = marker.centery
+                move = False 
     if event.type == pg.MOUSEBUTTONDOWN:
         if event.button == 1:
             # BLUE ONE
@@ -194,276 +203,66 @@ def blue_mousing():
     if event.type == pg.MOUSEBUTTONDOWN:
         if event.button == 1:
             # BLUE ONE
+            
             if marker.marker_1.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_1.centerx
-                        placer.blue_placer_1.centery = marker.marker_1.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_1.centerx
-                        placer.blue_border.centery = marker.marker_1.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_1, placer.blue_border, BLUE1)
             if marker.marker_2.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_2.centerx
-                        placer.blue_placer_1.centery = marker.marker_2.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_2.centerx
-                        placer.blue_border.centery = marker.marker_2.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_2, placer.blue_border, BLUE1)
             if marker.marker_3.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_3.centerx
-                        placer.blue_placer_1.centery = marker.marker_3.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_3.centerx
-                        placer.blue_border.centery = marker.marker_3.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_3, placer.blue_border, BLUE1)
             if marker.marker_4.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_4.centerx
-                        placer.blue_placer_1.centery = marker.marker_4.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_4.centerx
-                        placer.blue_border.centery = marker.marker_4.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_4, placer.blue_border, BLUE1)
             if marker.marker_5.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_5.centerx
-                        placer.blue_placer_1.centery = marker.marker_5.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_5.centerx
-                        placer.blue_border.centery = marker.marker_5.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_5, placer.blue_border, BLUE1)
             if marker.marker_6.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_6.centerx
-                        placer.blue_placer_1.centery = marker.marker_6.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_6.centerx
-                        placer.blue_border.centery = marker.marker_6.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_6, placer.blue_border, BLUE1)
             if marker.marker_7.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_7.centerx
-                        placer.blue_placer_1.centery = marker.marker_7.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_7.centerx
-                        placer.blue_border.centery = marker.marker_7.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_7, placer.blue_border, BLUE1)
             if marker.marker_8.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_8.centerx
-                        placer.blue_placer_1.centery = marker.marker_8.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_8.centerx
-                        placer.blue_border.centery = marker.marker_8.centery
-                        BLUE1 = False
+                moveMove(drawn, placer.blue_placer_1, marker.marker_8, placer.blue_border, BLUE1)
             if marker.marker_9.collidepoint(event.pos):
-                if drawn:
-                    if BLUE1:
-                        placer.blue_placer_1.centerx = marker.marker_9.centerx
-                        placer.blue_placer_1.centery = marker.marker_9.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_9.centerx
-                        placer.blue_border.centery = marker.marker_9.centery
-                        BLUE1 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_9, placer.blue_border, BLUE1)
+                
             # BLUE TWO
             if marker.marker_1.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_1.centerx
-                        placer.blue_placer_2.centery = marker.marker_1.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_1.centerx
-                        placer.blue_border.centery = marker.marker_1.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_1, placer.blue_border, BLUE2)
             if marker.marker_2.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_2.centerx
-                        placer.blue_placer_2.centery = marker.marker_2.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_2.centerx
-                        placer.blue_border.centery = marker.marker_2.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_2, placer.blue_border, BLUE2)
             if marker.marker_3.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_3.centerx
-                        placer.blue_placer_2.centery = marker.marker_3.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_3.centerx
-                        placer.blue_border.centery = marker.marker_3.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_3, placer.blue_border, BLUE2)
             if marker.marker_4.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_4.centerx
-                        placer.blue_placer_2.centery = marker.marker_4.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_4.centerx
-                        placer.blue_border.centery = marker.marker_4.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_4, placer.blue_border, BLUE2)
             if marker.marker_5.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_5.centerx
-                        placer.blue_placer_2.centery = marker.marker_5.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_5.centerx
-                        placer.blue_border.centery = marker.marker_5.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_5, placer.blue_border, BLUE2)
             if marker.marker_6.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_6.centerx
-                        placer.blue_placer_2.centery = marker.marker_6.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_6.centerx
-                        placer.blue_border.centery = marker.marker_6.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_6, placer.blue_border, BLUE2)
             if marker.marker_7.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_7.centerx
-                        placer.blue_placer_2.centery = marker.marker_7.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_7.centerx
-                        placer.blue_border.centery = marker.marker_7.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_7, placer.blue_border, BLUE2)
             if marker.marker_8.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_8.centerx
-                        placer.blue_placer_2.centery = marker.marker_8.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_8.centerx
-                        placer.blue_border.centery = marker.marker_8.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_8, placer.blue_border, BLUE2)
             if marker.marker_9.collidepoint(event.pos):
-                if drawn:
-                    if BLUE2:
-                        placer.blue_placer_2.centerx = marker.marker_9.centerx
-                        placer.blue_placer_2.centery = marker.marker_9.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_9.centerx
-                        placer.blue_border.centery = marker.marker_9.centery
-                        BLUE2 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_9, placer.blue_border, BLUE2)
+            
             # BLUE THREE
             if marker.marker_1.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_1.centerx
-                        placer.blue_placer_3.centery = marker.marker_1.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_1.centerx
-                        placer.blue_border.centery = marker.marker_1.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_1, placer.blue_border, BLUE3)
             if marker.marker_2.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_2.centerx
-                        placer.blue_placer_3.centery = marker.marker_2.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_2.centerx
-                        placer.blue_border.centery = marker.marker_2.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_2, placer.blue_border, BLUE3)
             if marker.marker_3.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_3.centerx
-                        placer.blue_placer_3.centery = marker.marker_3.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_3.centerx
-                        placer.blue_border.centery = marker.marker_3.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_3, placer.blue_border, BLUE3)
             if marker.marker_4.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_4.centerx
-                        placer.blue_placer_3.centery = marker.marker_4.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_4.centerx
-                        placer.blue_border.centery = marker.marker_4.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_4, placer.blue_border, BLUE3)
             if marker.marker_5.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_5.centerx
-                        placer.blue_placer_3.centery = marker.marker_5.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_5.centerx
-                        placer.blue_border.centery = marker.marker_5.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_5, placer.blue_border, BLUE3)
             if marker.marker_6.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_6.centerx
-                        placer.blue_placer_3.centery = marker.marker_6.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_6.centerx
-                        placer.blue_border.centery = marker.marker_6.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_6, placer.blue_border, BLUE3)
             if marker.marker_7.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_7.centerx
-                        placer.blue_placer_3.centery = marker.marker_7.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_7.centerx
-                        placer.blue_border.centery = marker.marker_7.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_7, placer.blue_border, BLUE3)
             if marker.marker_8.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_8.centerx
-                        placer.blue_placer_3.centery = marker.marker_8.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_8.centerx
-                        placer.blue_border.centery = marker.marker_8.centery
-                        BLUE3 = False
-
+                moveMove(drawn, placer.blue_placer_1, marker.marker_8, placer.blue_border, BLUE3)
             if marker.marker_9.collidepoint(event.pos):
-                if drawn:
-                    if BLUE3:
-                        placer.blue_placer_3.centerx = marker.marker_9.centerx
-                        placer.blue_placer_3.centery = marker.marker_9.centery
-                        drawn = False
-                        placer.blue_border.centerx = marker.marker_9.centerx
-                        placer.blue_border.centery = marker.marker_9.centery
-                        BLUE3 = False
+                moveMove(drawn, placer.blue_placer_1, marker.marker_9, placer.blue_border, BLUE3)
+            
 
 
 def yellow_mousing():
